@@ -1,0 +1,303 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #566873, #203a43, #2c5364);
+    color: #e0e0e0;
+    transition: background 0.6s ease, color 0.6s ease;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  body.dark {
+    background: linear-gradient(135deg, #121212, #1c1c1c, #262626);
+    color: #c8ff00;
+  }
+  
+  /* Background canvas styling */
+  #bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+  }
+  
+  /* Header */
+  header {
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #logo {
+    font-weight: 700;
+    font-size: 1.9rem;
+    cursor: pointer;
+    color: #00fffb;
+    user-select: none;
+    transition: transform 0.3s ease;
+    margin-right: 2rem;
+  }
+  
+  #logo:hover {
+    transform: translateX(-10px);
+    color: #e0ff4f;
+  }
+  
+  /* Nav */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+  
+  nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a.active,
+  nav ul li a:hover {
+    color: #00f7ff;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #00fffb;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+  }
+  
+  nav ul li a.active::after,
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Dark mode toggle button */
+  #dark-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #00e1ff;
+    user-select: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #dark-toggle:hover {
+    background-color: #e0ff4f33;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    padding: 7rem 0 5rem;
+    text-align: center;
+  }
+  
+  .hero-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #00fbff;
+    text-shadow: 0 0 10px #c8ff00bb;
+  }
+  
+  .hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #d9d9dd;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background: #00ffe1;
+    color: #000000;
+    border: none;
+    padding: 0.85rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #66f911c3;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .btn-primary:hover {
+    background: #e0ff4f;
+    box-shadow: 0 0 20px #e0ff4fcc;
+  }
+  
+  /* Sections common */
+  section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  /* Features Section */
+  .features-section h3,
+  .plans-section h3,
+  .about-section h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #00ffee;
+    text-shadow: 0 0 6px #c8ff00aa;
+  }
+  
+  .feature-grid {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item {
+    background: rgba(10, 235, 243, 0.987);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 280px;
+    box-shadow: 0 0 15px #76ff0344;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+    cursor: default;
+  }
+  
+  .feature-item:hover {
+    background: rgba(34, 35, 34, 0.5);
+    box-shadow: 0 0 25px #76ff03aa;
+  }
+  
+  .feature-icon {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    color: #26a69a;
+    filter: drop-shadow(0 0 6px #26a69a88);
+    transition: color 0.8s ease, filter 0.8s ease;
+  }
+  
+  body.dark .feature-icon {
+    color: #76ff03;
+    filter: drop-shadow(0 0 8px #76ff0380);
+  }
+  
+  .feature-item h4 {
+    margin-bottom: 1rem;
+    color: #c8ff00;
+  }
+  
+  .feature-item p {
+    font-size: 1rem;
+    color: #d9ff00cc;
+  }
+  
+  /* Plans and About Sections */
+  .plans-section p,
+  .about-section p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #7eaaa8bf;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 1.5rem 0;
+    background: #121212dd;
+    text-align: center;
+    color: #7a7a7a;
+    font-size: 0.9rem;
+  }
+  
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .social-links a {
+    color: #7a7a7a;
+    margin-left: 1.3rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #c8ff00;
+  }
+  
+  /* Fade-in animations for sections */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .fade-in.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Scroll active nav */
+  nav ul li a.active {
+    font-weight: 700;
+    color: #e0ff4f;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .feature-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-flex {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    nav ul {
+      gap: 1.5rem;
+    }
+    #logo {
+      margin-right: 1rem;
+    }
+  }
+  
